@@ -24,28 +24,28 @@ const RightSidebarItems: NavProps[] = [
     { name: 'Energy Usage Reports', link: '/energy-usage', icon: <FaClipboardList /> },
     { name: 'Temperature Monitoring', link: '/temperature-monitoring', icon: <FaThermometerHalf /> },
 ];
-
 // Sidebar component
 const RightContent = () => {
     const [isOpen, setIsOpen] = useState(true); // State to manage sidebar visibility
 
     return (
-        <aside className={` text-white w-64 p-4 h-full transition-all duration-300 ${isOpen ? 'block' : 'hidden md:block'}`}>
+        <aside className={`text-white h-full transition-all duration-300 hidden md:flex flex-col ${isOpen ? 'block' : 'hidden'}`}>
             <div className="flex items-center justify-between mb-4">
-                <h2 className={`text-xl font-bold transition-all duration-300 ${isOpen ? 'block' : 'hidden'}`}>S.E.N.S.E. System</h2>
-                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white">
+                <h2 className={`text-xl font-bold transition-all duration-300 ${isOpen ? 'block' : 'hidden'}`}>Sense Management</h2>
+                
+                <button onClick={() => setIsOpen(!isOpen)} className="text-white ">
                     {isOpen ? <FaTimes /> : <FaBars />}
                 </button>
             </div>
-            <nav className="flex flex-col space-y-2">
+            <nav className="flex flex-col space-y-8 float-right">
                 {RightSidebarItems.map((item, index) => (
                     <a
                         key={index}
                         href={item.link}
-                        className="flex items-center p-2 rounded hover:bg-gray-700 transition-colors"
+                        className="flex items-center border bg-white text-black p-2 rounded transform transition-transform duration-300 hover:scale-110"
                     >
                         {item.icon}
-                        <span className={`ml-2 transition-all duration-300 ${isOpen ? 'block' : 'hidden'}`}>{item.name}</span>
+                        <span className={`ml-4 transition-all duration-300 ${isOpen ? 'block' : 'hidden'}`}>{item.name}</span>
                     </a>
                 ))}
             </nav>

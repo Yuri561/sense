@@ -52,7 +52,7 @@ const Header = () => {
                     <a
                         key={index}
                         href={item.link}
-                        className="flex items-center p-2 rounded hover:bg-gray-700 transition-colors"
+                        className="flex items-center border bg-white text-black p-2 rounded transform transition-transform duration-300 hover:scale-105"
                     >
                         {item.icon}
                         <span className="ml-2">{item.name}</span>

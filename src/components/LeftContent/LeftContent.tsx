@@ -28,11 +28,11 @@ const LeftContent = () => {
     const [isOpen, setIsOpen] = useState(true); // State to manage sidebar visibility
 
     return (
-        <aside className={`text-white h-full transition-all duration-300 ${isOpen ? 'w-64' : 'w-10'}`}>
+        <aside className={`text-white h-full transition-all duration-300 ${isOpen ? 'w-[]' : 'w-10'}`}>
             <div className="flex items-center justify-between mb-4">
                 <h2 className={`text-xl font-bold transition-all duration-300 ${isOpen ? 'block' : 'hidden'}`}>S.E.N.S.E. System</h2>
                 
-                <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+                <button onClick={() => setIsOpen(!isOpen)} className="text-white ">
                     {isOpen ? <FaTimes /> : <FaBars />}
                 </button>
             </div>
@@ -41,7 +41,7 @@ const LeftContent = () => {
                     <a
                         key={index}
                         href={item.link}
-                        className="flex text-xl items-center p-2 rounded hover:bg-gray-700 transition-colors"
+                        className="flex items-center border bg-white text-black p-2 rounded transform transition-transform duration-300 hover:scale-110"
                     >
                         {item.icon}
                         <span className={`ml-4 transition-all duration-300 ${isOpen ? 'block' : 'hidden'}`}>{item.name}</span>
